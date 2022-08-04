@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo.png"
+import "../../styles/index.css"
 
 export const Navbar = () => {
 	return (
-	    <nav className="navbar bg-dark ">
+	    <nav className="navbar ">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          <img src={logo} alt="logo-rick-morty" width="80" height="80" className="rounded-circle"/>
+          <img src={logo} alt="logo-rick-morty" width="90" height="90" className="rounded-circle"/>
         </Link>
       </div>
       <div className="dropdown">

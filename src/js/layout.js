@@ -28,11 +28,11 @@ const Layout = () => {
 						<Route exact path="/locations">
 							<Locations />
 						</Route>
-						<Route exact path="/characters">
+						<Route  path="/characters/:id">
 							<Characters />
 						</Route>
 						<Route>
-							<h1>Not found!</h1>
+							<h1 className="text-white d-flex justify-content-center ">Not found!</h1>
 						</Route>
 					</Switch>
 					
