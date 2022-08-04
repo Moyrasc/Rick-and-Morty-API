@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 
 import "../../styles/demo.css";
 
  const Locations = () => {
-	
+  
+  const [planet, setPlanet] = useState([])
+  const {id} = useParams()
+
+  useEffect(()=>{
+    const getPlanet = async () =>{
+      try {
+        await fetch(`https://rickandmortyapi.com/api/location/${id}`)
+        .then((res) => res.json())
+        .then((data)=> setPlanet(data))
+        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getPlanet()
+  },[])
+	// console.log(id)
 	return (
 		<>
 		<div className="mainContainer mt-5">
@@ -16,7 +34,7 @@ import "../../styles/demo.css";
             <div className="col-md-8 card-body">
               <div className="card-body">
                 <h1 className="card-title text-dark text-center">
-                  location.name
+               { planet.name}
                 </h1>
                 <p className="card-text text-dark text-center">
                   Lorem Ipsum is simply dummy text of the printing and

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
  const Characters = () => {
   const [person, setPerson] = useState([])
-  const params = useParams()
+  const {id} = useParams()
+  
   useEffect(()=>{
-    const getPerson = async (id) =>{
+    const getPerson = async () =>{
       try {
-        await fetch(`https://rickandmortyapi.com/api/character/${params}`)
+        await fetch(`https://rickandmortyapi.com/api/character/${id}`)
         .then((res) => res.json())
         .then((data)=> setPerson(data))
         
@@ -17,6 +18,7 @@ import { useParams } from "react-router";
     }
     getPerson()
   },[])
+  // console.log(id)
   return (
     <>
       <div className="mainContainer mt-5">
@@ -24,7 +26,7 @@ import { useParams } from "react-router";
           <div className="row g-0">
             <div className="col-md-4">
               <img
-                src="https://picsum.photos/800/500?random"
+                src={person.image}
                 className="img-fluid rounded-start"
                 alt="..."
               />
