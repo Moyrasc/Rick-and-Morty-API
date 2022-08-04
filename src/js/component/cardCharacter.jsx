@@ -5,7 +5,7 @@ const CardCharacter = () => {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    const getPerson = async () => {
+    const getPersons = async () => {
       try {
         await fetch("https://rickandmortyapi.com/api/character")
           .then((res) => res.json())
@@ -14,7 +14,7 @@ const CardCharacter = () => {
         (err) => console.error(err);
       }
     };
-    getPerson();
+    getPersons();
   }, []);
 
   return characters.map((character) => {

@@ -4,8 +4,9 @@ import "../../styles/home.css";
 
 import CardsHome from "../component/cardsHome.jsx";
 
-export const Home = () => (
+ const Home = () => (
 	<div className="text-center mt-5">
 	<CardsHome/>
 	</div>
 );
+export default Home;

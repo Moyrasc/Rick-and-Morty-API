@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 
-import { Home } from "./views/home.jsx";
-import { Locations } from "./views/locations.jsx";
-import { Characters } from "./views/characters.jsx";
+import  Home  from "./views/home.jsx";
+import  Locations  from "./views/locations.jsx";
+import Characters from "./views/characters.jsx";
+import Notfound from "./views/notfound.jsx";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar.jsx";
@@ -32,7 +33,7 @@ const Layout = () => {
 							<Characters />
 						</Route>
 						<Route>
-							<h1 className="text-white d-flex justify-content-center ">Not found!</h1>
+						<Notfound />
 						</Route>
 					</Switch>
 					

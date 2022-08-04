@@ -3,7 +3,7 @@ import React from "react";
 
 import "../../styles/demo.css";
 
-export const Locations = () => {
+ const Locations = () => {
 	
 	return (
 		<>
@@ -37,3 +37,4 @@ export const Locations = () => {
 		</>
 	)
 };
+export default Locations

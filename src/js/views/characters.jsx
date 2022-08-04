@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
-export const Characters = () => {
+ const Characters = () => {
+  const [person, setPerson] = useState([])
+  const params = useParams()
+  useEffect(()=>{
+    const getPerson = async (id) =>{
+      try {
+        await fetch(`https://rickandmortyapi.com/api/character/${params}`)
+        .then((res) => res.json())
+        .then((data)=> setPerson(data))
+        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getPerson()
+  },[])
   return (
     <>
       <div className="mainContainer mt-5">
@@ -16,7 +32,7 @@ export const Characters = () => {
             <div className="col-md-8 card-body">
               <div className="card-body">
                 <h1 className="card-title text-dark text-center">
-                  character.name
+                  {person.name}
                 </h1>
                 <p className="card-text text-dark text-center">
                   Lorem Ipsum is simply dummy text of the printing and
@@ -37,3 +53,4 @@ export const Characters = () => {
     </>
   );
 };
+ export default Characters
