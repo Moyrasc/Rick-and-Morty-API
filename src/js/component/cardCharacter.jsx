@@ -70,6 +70,7 @@ const CardCharacter = () => {
           </div>
         </div>
       </div>
+  
     );
   });
 };
