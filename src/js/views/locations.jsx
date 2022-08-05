@@ -1,26 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 
 import "../../styles/demo.css";
+import { Context } from "../store/appContext";
 
  const planet = () => {
-  
+  const {store, actions}= useContext(Context)
   const [planet, setPlanet] = useState([])
   const {id} = useParams()
 
   useEffect(()=>{
-    const getPlanet = async () =>{
-      try {
-        await fetch(`https://rickandmortyapi.com/api/location/${id}`)
-        .then((res) => res.json())
-        .then((data)=> setPlanet(data))
-        
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getPlanet()
+ 
+    actions.getPlanet(id)
   },[])
 	
 	return (

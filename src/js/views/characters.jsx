@@ -1,44 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 
  const Characters = () => {
 
-
-  const [person, setPerson] = useState([])
+  const {store,actions} = useContext(Context)
+  
   const {id} = useParams()
   
   useEffect(()=>{
-    const getPerson = async () =>{
-      try {
-        await fetch(`https://rickandmortyapi.com/api/character/${id}`)
-        .then((res) => res.json())
-        .then((data)=> setPerson(data))
-        
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getPerson()
+ actions.getPerson(id)
   },[])
  
   return (
     <>
-      <div className="container-fluid d-flex justify-content-center mt-4" key={person.id}>
+      <div className="container-fluid d-flex justify-content-center mt-4" key={store.person.id}>
         <div className="card" style={{ width: 30 + "rem" }}>
-          <img src={person.image} className="card-img-top" alt="..." />
+          <img src={store.person.image} className="card-img-top" alt="..." />
           <div className="card-body border text-center">
-            <h5 className="card-title">{person.name}</h5>
+            <h5 className="card-title">{store.person.name}</h5>
              <p className="card-text m-1">
-              {" "}
-              <strong>Status:</strong> {person.status}{" "}
+              
+              <strong>Status:</strong> {store.person.status}
             </p>
             <p className="card-text m-1">
-              {" "}
-              <strong>Species:</strong> {person.species}
+              
+              <strong>Species:</strong> {store.person.species}
             </p>
             <p className="card-text ">
               {" "}
-              <strong>Gender:</strong> {person.gender}
+              <strong>Gender:</strong> {store.person.gender}
             </p>
           </div>
         </div>

@@ -1,23 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const CardCharacter = () => {
-  const [characters, setCharacters] = useState([]);
+  const { store, actions } = useContext(Context);
 
   useEffect(() => {
-    const getPersons = async () => {
-      try {
-        await fetch("https://rickandmortyapi.com/api/character")
-          .then((res) => res.json())
-          .then((data) => setCharacters(data.results));
-      } catch {
-        (err) => console.error(err);
-      }
-    };
-    getPersons();
+    actions.getPersons();
   }, []);
 
-  return characters.map((character) => {
+  return store.characters.map((character) => {
     return (
       <div className="container-fluid d-flex " key={character.id}>
         <div className="card" style={{ width: 18 + "rem" }}>
@@ -26,7 +18,10 @@ const CardCharacter = () => {
             <h5 className="card-title">{character.name}</h5>
             <div className=" d-flex justify-content-between">
               <Link to={`/characters/${character.id}`}>
-                <button type="button" className="btn btn-outline-dark btn-sm border-0 p-0 m-0 rounded-circle">
+                <button
+                  type="button"
+                  className="btn btn-outline-dark btn-sm border-0 p-0 m-0 rounded-circle"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
@@ -58,7 +53,6 @@ const CardCharacter = () => {
           </div>
         </div>
       </div>
-  
     );
   });
 };

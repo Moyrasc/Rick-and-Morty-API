@@ -1,25 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const CardLocations = () => {
-  // creo variables de estado
-  const [location, setLocation] = useState([]);
+  const { store, actions } = useContext(Context);
 
-  // petición de datos a la API
   useEffect(() => {
-    const getLocation = async () => {
-      try {
-        await fetch("https://rickandmortyapi.com/api/location")
-          .then((res) => res.json())
-          .then((data) => setLocation(data.results));
-      } catch {
-        (err) => console.error(err);
-      }
-    };
-    getLocation();
+    actions.getLocation();
   }, []);
 
-  return location.map((locations) => {
+  return store.location.map((locations) => {
     return (
       <div className="container-fluid d-flex " key={locations.id}>
         <div className="card" style={{ width: 18 + "rem" }}>
