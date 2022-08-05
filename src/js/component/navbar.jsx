@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
-import letras from "../../img/letras.png"
 import "../../styles/index.css";
 
 export const Navbar = () => {
@@ -19,13 +18,6 @@ export const Navbar = () => {
           />
          
         </Link>
-        {/* <img
-            src={letras}
-            alt="letras-rick-morty"
-            width="250"
-            height="100"
-            className=" "
-          /> */}
       </div>
       <div className="dropdown">
         <button

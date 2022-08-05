@@ -20,7 +20,7 @@ import { useParams } from "react-router-dom";
     }
     getPerson()
   },[])
-  // console.log(id)
+ 
   return (
     <>
       <div className="container-fluid d-flex justify-content-center mt-4" key={person.id}>

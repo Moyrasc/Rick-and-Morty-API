@@ -30,16 +30,6 @@ const CardLocations = () => {
           />
           <div className="card-body border">
             <h5 className="card-title">{locations.name}</h5>
-            {/* <p className="card-text m-1">
-              {" "}
-              <strong>Type: </strong>
-              {locations.type}{" "}
-            </p>
-            <p className="card-text m-1">
-              {" "}
-              <strong>Dimension: </strong> {locations.dimension}
-            </p> */}
-
             <div className=" d-flex justify-content-between">
               <Link to={`/locations/${locations.id}`}>
                 <button

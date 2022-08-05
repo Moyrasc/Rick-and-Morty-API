@@ -22,7 +22,7 @@ import "../../styles/demo.css";
     }
     getPlanet()
   },[])
-	// console.log(id)
+	
 	return (
 	
       <div className="container-fluid d-flex justify-content-center mt-4" key={planet.id}>

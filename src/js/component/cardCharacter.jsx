@@ -24,18 +24,6 @@ const CardCharacter = () => {
           <img src={character.image} className="card-img-top" alt="..." />
           <div className="card-body border">
             <h5 className="card-title">{character.name}</h5>
-             {/*<p className="card-text m-1">
-              {" "}
-              <strong>Status:</strong> {character.status}{" "}
-            </p>
-            <p className="card-text m-1">
-              {" "}
-              <strong>Species:</strong> {character.species}
-            </p>
-            <p className="card-text ">
-              {" "}
-              <strong>Gender:</strong> {character.gender}
-            </p>*/}
             <div className=" d-flex justify-content-between">
               <Link to={`/characters/${character.id}`}>
                 <button type="button" className="btn btn-outline-dark btn-sm border-0 p-0 m-0 rounded-circle">
