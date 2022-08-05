@@ -32,13 +32,13 @@ export const Navbar = () => {
           </button>
           <ul className="dropdown-menu">
             {store.favorites.length > 0 ? (
-              store.favorites.map((item, index) => (
+              store.favorites.map((fav, index) => (
                 <li key={index} className="dropdown-item">
-                  {item}
+                  {fav}
                   <button
                   className="border rounded-circle ms-2"
                     onClick={() => {
-                      actions.deleteFavorites(item);
+                      actions.deleteFavorites(fav);
                     }}
                   ><svg
                   xmlns="http://www.w3.org/2000/svg"

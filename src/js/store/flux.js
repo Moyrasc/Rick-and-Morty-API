@@ -37,16 +37,14 @@ const getState = ({ getStore, setStore }) => {
           });
         }
       },
-      deletefavorites: (person) => {
+      deletefavorites: (name) => {
         const store = getStore();
-        const people = store.favorites;
-
-        let newArrPerson = people.filter((item) => item !== person);
-        setStore({
-          favorites: newArrPerson,
-        });
-      },
-    },
+					setStore({...store, favorites:[store.favorites.filter((fav) => fav != name)]})
+				
+        
+      
+	  }
+	}
   };
 };
 
