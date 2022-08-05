@@ -1,10 +1,11 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, setStore }) => {
   return {
     store: {
       characters: [],
       location: [],
       person: [],
-	  planet: [],
+      planet: [],
+      favorites: [],
     },
     actions: {
       getPersons: () => {
@@ -22,31 +23,28 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((response) => response.json())
           .then((data) => setStore({ person: data }));
       },
-	  getPlanet: (id) =>{
-	 fetch(`https://rickandmortyapi.com/api/location/${id}`)
-		  .then((res) => res.json())
-		  .then((data)=> setStore({planet: data}))
-		},
-		  
-
-      loadSomeData: () => {
-        /**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+      getPlanet: (id) => {
+        fetch(`https://rickandmortyapi.com/api/location/${id}`)
+          .then((res) => res.json())
+          .then((data) => setStore({ planet: data }));
       },
-      changeColor: (index, color) => {
-        //get the store
+      addFavorites: (newItem) => {
         const store = getStore();
+        if (!store.favorites.includes(newItem)) {
+          setStore({
+            ...store.favorites,
+            favorites: store.favorites.concat(newItem),
+          });
+        }
+      },
+      deletefavorites: (person) => {
+        const store = getStore();
+        const people = store.favorites;
 
-        //we have to loop the entire demo array to look for the respective index
-        //and change its color
-        const demo = store.demo.map((elm, i) => {
-          if (i === index) elm.background = color;
-          return elm;
+        let newArrPerson = people.filter((item) => item !== person);
+        setStore({
+          favorites: newArrPerson,
         });
-
-        //reset the global store
-        setStore({ demo: demo });
       },
     },
   };

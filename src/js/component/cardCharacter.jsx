@@ -35,7 +35,10 @@ const CardCharacter = () => {
                   </svg>
                 </button>
               </Link>
-              <button className="btn btn-outline-warning btn-sm border-0 p-0 m-0 ">
+              <button className="btn btn-outline-warning btn-sm border-0 p-0 m-0 " onClick={() => {
+              actions.addFavorites(character.name);
+            }}>
+                
                 <svg
                   width="30"
                   height="30"
