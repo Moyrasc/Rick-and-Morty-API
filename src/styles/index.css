@@ -4,8 +4,10 @@
   }
  
 body{
-    height: 100vh;
+    min-height: 100vh;
     background: url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png");
+    position: relative;
+    padding-bottom: 30px;
 }
 
 .navbar{
@@ -19,12 +21,15 @@ body{
 .img-notfound{
     justify-content: center;
 }
-.home-container{
-    flex-grow: 1;
-}
+
+
 footer{
     background-color: var(--main-bg-color);
     background-image: var(--main-bg-img);
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    
 
 }
 .btn-input{
