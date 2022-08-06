@@ -40,12 +40,16 @@ const getState = ({ getStore, setStore }) => {
       deleteFavorites: (name) => {
         const store = getStore();
 					setStore({...store, favorites:[store.favorites.filter((fav) => fav != name)]})
-				
-        
-      
-	  }
+			},
+      searchCharacter: (name)=>{
+        const store = getStore();
+        setStore({...store, characters:[store.characters.filter((character)=> character == name)]})
+
+        }
+
+      },
 	}
   };
-};
+
 
 export default getState;

@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const Autocomplete = () => {
+
+    const {store, actions} = useContext(Context)
   return (
     <>
-      <div clasName="input-group mb-3">
+      <div className="input-group mb-3 ">
         <input
           type="text"
-          class="form-control"
+          className="form-control "
           placeholder="Search your character o location"
           aria-label="Recipient's username"
           aria-describedby="button-addon"
+          onChange={()=>{actions.searchCharacter()}}
+        
         />
+        <Link to={`/characters/${store.characters.id}`}>
         <button
           className="btn btn-outline-secondary"
           type="button"
@@ -18,6 +25,7 @@ const Autocomplete = () => {
         >
           Search
         </button>
+        </Link>
       </div>
     </>
   );
