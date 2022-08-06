@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 
-import "../../styles/demo.css";
+
 import { Context } from "../store/appContext";
 
  const planet = () => {

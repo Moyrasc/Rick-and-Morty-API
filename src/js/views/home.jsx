@@ -1,7 +1,5 @@
 import React from "react";
 
-import "../../styles/home.css";
-
 import CardsHome from "../component/cardsHome.jsx";
 
  const Home = () => (
