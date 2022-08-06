@@ -11,7 +11,7 @@ const CardCharacter = () => {
 
   return store.characters.map((character) => {
     return (
-      <div className="container-fluid d-flex mt-2" key={character.id}>
+      <div className="container-fluid d-flex mt-2 justify-content-center" key={character.id}>
         <div className="card" style={{ width: 18 + "rem" }}>
           <img src={character.image} className="card-img-top" alt="..." />
           <div className="card-body border">

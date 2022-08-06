@@ -11,7 +11,7 @@ const CardLocations = () => {
 
   return store.location.map((locations) => {
     return (
-      <div className="container-fluid d-flex mt-2" key={locations.id}>
+      <div className="container-fluid d-flex justify-content-center mt-2" key={locations.id}>
         <div className="card" style={{ width: 18 + "rem" }}>
           <img
             src="https://play-lh.googleusercontent.com/fVRg0B1Pgo0l93mSrqSnqZSNNcaqEyMGc-Y2qWqhwOE-IhYe1ogAnnFuieK9iZ8VVg"
