@@ -7,7 +7,7 @@ const Autocomplete = () => {
     const {store, actions} = useContext(Context)
   return (
     <>
-      <div className="input-group mb-3 ">
+      <div className="input-group mb-3 " style={{width: 350 + "px"}}>
         <input
           type="text"
           className="form-control "
@@ -19,7 +19,7 @@ const Autocomplete = () => {
         />
         <Link to={`/characters/${store.characters.id}`}>
         <button
-          className="btn btn-outline-secondary"
+          className="btn btn-outline-secondary btn-input text-dark"
           type="button"
           id="button-addon"
         >
