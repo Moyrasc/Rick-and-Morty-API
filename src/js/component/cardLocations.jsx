@@ -6,7 +6,7 @@ const CardLocations = () => {
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
-    actions.getLocation();
+    actions.getLocations();
   }, []);
 
   return store.location.map((locations) => {

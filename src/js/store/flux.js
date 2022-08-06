@@ -13,7 +13,7 @@ const getState = ({ getStore, setStore }) => {
           .then((response) => response.json())
           .then((data) => setStore({ characters: data.results }));
       },
-      getLocation: () => {
+      getLocations: () => {
         fetch("https://rickandmortyapi.com/api/location")
           .then((response) => response.json())
           .then((data) => setStore({ location: data.results }));
@@ -37,7 +37,7 @@ const getState = ({ getStore, setStore }) => {
           });
         }
       },
-      deletefavorites: (name) => {
+      deleteFavorites: (name) => {
         const store = getStore();
 					setStore({...store, favorites:[store.favorites.filter((fav) => fav != name)]})
 				
