@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
 :root {
     --main-bg-color: rgb(0, 229, 255);
     --main-bg-img: linear-gradient(120deg, #9fff18 50%, #18c2cb6b 100%);
@@ -6,6 +8,7 @@
 body{
     min-height: 100vh;
     background: url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png");
+    font-family: 'Mouse Memoirs', sans-serif;
     position: relative;
     padding-bottom: 30px;
 }
