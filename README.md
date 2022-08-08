@@ -1,99 +1,52 @@
-# WebApp boilerplate with React JS
+# Rick y Morty API
+<img src="src/img/preview rick-morty.png"/>
+
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/react-hello-webapp.git)
 
-<p align="center">
-<a href="https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b"><img src="https://github.com/4GeeksAcademy/react-hello-webapp/blob/master/src/img/how-to.png?raw=true" /></a>
-</p>
 
 
-### Requirements:
+
+### Requisitos:
 - Make sure you are using node version 10
 
-1. Install the packages:
+1. Instala los paquetes:
 ```
 $ npm install
 ```
-2. Create a .env file:
+2. Crea a .env file:
 ```
 $ cp .env.example .env
 ```
-3. Start coding! and the webpack dev server with live reload, for windows, mac, linux or Gitpod:
+3. Empieza a programar!
 
 ```bash
 $ npm run start
 ```
 
-### Styles
-You can update the `styles/index.css` or create new `.css` files inside `styles/` and import them into your current scss or js files depending on your needs.
+## 📝 Instrucciones.
+1) Utiliza los componentes de bootstrap (Card, Buttons, etc.), prácticamente no necesitarás casi CSS propio.
+2) Tomate un tiempo para entender la API que vamos a utilizar https://rickandmortyapi.com/ y para obtener la información.
+3) Utiliza la función Fetch para consumir la API y obtener los Personajes  y Localizaciones y mostrarlos en tu web.
+4) Deberás tener un store centralizado con tu información.
+5) Para resolver la funcionalidad de "favoritos" te recomendamos declarar un arreglo favorites en el store y tener alli la lista de todo.
 
-### Components
-Add more files into your `./src/js/components` or styles folder as you need them and import them into your current files as needed.
 
-**Note (New changes)**: Components have been converted into functions to support the use of hooks:
-* Instead of a class component, we're using a `const` function.
-* Class `constructor` and `state` have been replaced by `useState()` hooks.
-* `componentDidMount()` was replaced by `useEffect({}, [])` - It runs at mount thanks to the second parameter (`[]`).
-* `Actions` and `Store` still work the same way.
 
-```jsx
-// Previous "Class Oriented"
-export class Demo extends React.Component {
-	constructor(props) {
-		super(props);
+## ✨ Sobre el Proyecto.
+El proyecto consiste en desarrollar una página web consumiento la API de Rick y Morty.Lo he organizado de la siguiente manera:
+### Vistas (views).
+- Home: Aquí aparecen tanto los personajes como las localizaciones.
+- Personaje: En ella aparecerá información más completa del personaje que queramos ver.
+- Localización: Al igual que la anterior pero en este caso se muestran las localizaciones.
+- Not found: Por el momento solo se muestra si la ruta no está definida, pero tengo que implementar que también se muestre a la hora de buscar un personaje/localización del que no se disponga información.
+### Componentes.
+- Navbar: En la barra de navegación tenemos 2 elementos, por un lado el logo que sirve para volver a la página principal y por otro el botón de favoritos donde se almacenan aquellos elementos que el usuario guarda.
+- Cards : Cuando se muestran en la página principal tenemos una imagen, el nombre del personaje/localización y dos botones, uno para guardar en favoritos y el otro para cambiar de vista y obtener más información.
+- Input de búsqueda: Este componente aún no es funcional, estoy trabajando en ello ya que lo que pretendo es que cuando el usuario escriba aparezca un listado de los personajes y localizaciones coincidentes con el texto y que una vez pulse el botón de buscar le redirija a la vista correspondiente.
+- Footer: Sobre este componente no hay mucho que decir, se puede ver mi nombre, el mes y el año en el que se ha realizado el proyecto.
+### Flux.
+En un primer momento, las variables de estado,funciones y los fetch estaban cada uno en su componente, una vez empezamos a trabajar con flux, centralicé todas las variables, peticiones y funciones para que el código fuese lo mas limpio posible y el poder pasar la información entre componentes fuese mas sencillo.
+### Bonus
+ Llevo días intentando implementar la paginación para poder controlar el número de elementos que quiero visualizar en cada página para hacer más comoda la navegación del usuario pero me esta dando algún quebradero de cabeza, no obstante es algo que incluiré en el momento que consiga hacerlo funcionar correctamente.
 
-		this.state = getState('code here');
-	}
-}
 
-// New "Functional Oriented"
-export const Demo = () => (
-	const [state, setState] = getState('code here'); //using the state (if needed)
-  const { store, actions } = useContext(Context); // using the context (if needed)
-
-);
-```
-
-💡Note: There is an example using the Context API inside `views/demo.js`;
-
-### Views (Components)
-Add more files into your `./src/js/views` and import them in `./src/js/layout.jsx`.
-
-### Context
-This boilerplate comes with a centralized general Context API. The file `./src/js/store/flux.js` has a base structure for the store, we encourage you to change it and adapt it to your needs.
-
-React Context [docs](https://reactjs.org/docs/context.html)
-BreathCode Lesson [view](https://content.breatheco.de/lesson/react-hooks-explained)
-
-The `Provider` is already set. You can consume from any component using the useContext hook to get the `store` and `actions` from the Context. Check `/views/demo.js` to see a demo.
-
-```jsx
-import { Context } from "../store/appContext";
-const MyComponentSuper = () => {
-  //here you use useContext to get store and actions
-  const { store, actions } = useContext(Context);
-  return <div>{/* you can use your actions or store inside the html */}</div>
-}
-```
-
-## Publish your website!
-
-1. **Vercel:** The FREE recomended hosting provider is [vercel.com](https://vercel.com/), you can deploy in 1 minutes by typing the following 2 commands:
-
-Login (you need to have an account):
-```sh
-$ npm i vercel -g && vercel login
-```
-Deploy:
-```sh
-$ vercel --prod
-```
-✎ Note: If you don't have an account just go to vercel.com, create a account and come back here.
-
-![Vercel example procedure to deploy](https://github.com/4GeeksAcademy/react-hello-webapp/blob/4b530ba091a981d3916cc6e960e370decaf2e234/docs/deploy.png?raw=true)
-
-2. **Github Pages:** This boilerplate is 100% compatible with the free github pages hosting.
-To publish your website you need to push your code to your github repository and run the following command after:
-```sh
-$ npm run deploy
-```
-Note: You will need to [configure github pages for the branch gh-pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages)

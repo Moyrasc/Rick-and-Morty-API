@@ -11,7 +11,10 @@ body{
     font-family: 'Mouse Memoirs', sans-serif;
     position: relative;
     padding-bottom: 30px;
+    
 }
+
+
 
 .navbar{
     background-color: var(--main-bg-color);
