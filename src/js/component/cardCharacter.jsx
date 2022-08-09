@@ -36,7 +36,7 @@ const CardCharacter = () => {
                 </button>
               </Link>
               <button className="btn btn-outline-warning btn-sm border-0 p-0 m-0 " onClick={() => {
-              actions.addFavorites(character.name);
+              actions.addFavorites(character);
             }}>
                 
                 <svg

@@ -32,22 +32,16 @@ const getState = ({ getStore, setStore }) => {
       },
       addFavorites: (newItem) => {
         const store = getStore();
-        if (!store.favorites.includes(newItem)) {
-          setStore({
-            ...store.favorites,
-            favorites: store.favorites.concat(newItem),
-          });
-        }
+        setStore({ favorites: [...store.favorites, newItem] })
+      
       },
-      deleteFavorites: (name) => {
-        const store = getStore();
-					setStore({...store, favorites:[store.favorites.filter((fav) => fav != name)]})
-			},
-      // searchCharacter: (name)=>{
-      //   const store = getStore();
-      //   setStore({...store, characters:[store.characters.filter((character)=> character == name)]})
+      deleteFavorites: (character) => {
+        const store = getStore(); 
+          let newArray = store.favorites.filter((fav)=> fav.name !== character)
+          setStore({favorites : newArray})
+          
 
-      //   }
+			},
       handleFilter: (name) => {
         const store = getStore();
         const search = store.characters.filter(
