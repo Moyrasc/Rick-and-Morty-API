@@ -14,7 +14,9 @@ const Autocomplete = () => {
           placeholder="Search your character o location"
           aria-label="Recipient's username"
           aria-describedby="button-addon"
-          onChange={()=>{actions.searchCharacter()}}
+          onChange={(e)=>{actions.handleFilter(e.target.value)}}
+          value={store.filterItem.name}
+          
         
         />
         <Link to={`/characters/${store.characters.id}`}>
@@ -22,6 +24,7 @@ const Autocomplete = () => {
           className="btn btn-outline-secondary btn-input text-dark"
           type="button"
           id="button-addon"
+          onSubmit={(e)=>actions.handleFilter(e.target.value)}
         >
           Search
         </button>

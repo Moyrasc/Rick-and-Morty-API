@@ -6,6 +6,7 @@ const getState = ({ getStore, setStore }) => {
       person: [],
       planet: [],
       favorites: [],
+      filterItem:[],
     },
     actions: {
       getPersons: () => {
@@ -41,14 +42,23 @@ const getState = ({ getStore, setStore }) => {
         const store = getStore();
 					setStore({...store, favorites:[store.favorites.filter((fav) => fav != name)]})
 			},
-      searchCharacter: (name)=>{
-        const store = getStore();
-        setStore({...store, characters:[store.characters.filter((character)=> character == name)]})
+      // searchCharacter: (name)=>{
+      //   const store = getStore();
+      //   setStore({...store, characters:[store.characters.filter((character)=> character == name)]})
 
-        }
+      //   }
+      handleFilter: (name) => {
+        const store = getStore();
+        const search = store.characters.filter(
+          (item) =>
+            item.name.toLowerCase().includes(name.toLowerCase()) ||
+            item.origin.name.toLowerCase().includes(name.toLowerCase())
+        );
+        setStore({filterItem: search});
 
       },
 	}
+}
   };
 
 
