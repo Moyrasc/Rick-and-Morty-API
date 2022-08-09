@@ -22,7 +22,7 @@ export const Navbar = () => {
         </div>
         <div className="dropdown">
           <button
-            className="btn btn-sm btn-dark dropdown-toggle me-4"
+            className="btn btn btn-dark dropdown-toggle me-4"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"

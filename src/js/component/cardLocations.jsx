@@ -19,12 +19,12 @@ const CardLocations = () => {
             alt="..."
           />
           <div className="card-body border">
-            <h5 className="card-title">{locations.name}</h5>
+            <h5 className="card-title fs-3">{locations.name}</h5>
             <div className=" d-flex justify-content-between">
               <Link to={`/locations/${locations.id}`}>
                 <button
                   type="button"
-                  className="btn btn-outline-dark btn-sm border-0 p-0 m-0 rounded-circle"
+                  className="btn btn-fav btn-sm border-0 p-0 m-0 rounded-circle"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,9 @@ const CardLocations = () => {
                   </svg>
                 </button>
               </Link>
-              <button className="btn btn-outline-warning btn-sm border-0 p-0 m-0 ">
+              <button className="btn btn-fav btn-sm border-0 p-0 m-0 " onClick={() => {
+              actions.addFavorites(locations);
+            }}>
                 <svg
                   width="30"
                   height="30"

@@ -12,15 +12,15 @@ const CardCharacter = () => {
   return store.characters.map((character) => {
     return (
       <div className="container-fluid d-flex mt-2 justify-content-center" key={character.id}>
-        <div className="card" style={{ width: 18 + "rem" }}>
+        <div className="card card-info" style={{ width: 18 + "rem" }}>
           <img src={character.image} className="card-img-top" alt="..." />
           <div className="card-body border">
-            <h5 className="card-title">{character.name}</h5>
+            <h5 className="card-title fs-3">{character.name}</h5>
             <div className=" d-flex justify-content-between">
               <Link to={`/characters/${character.id}`}>
                 <button
                   type="button"
-                  className="btn btn-outline-dark btn-sm border-0 p-0 m-0 rounded-circle"
+                  className="btn btn-fav btn-sm border-0 p-0 m-0 rounded-circle"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const CardCharacter = () => {
                   </svg>
                 </button>
               </Link>
-              <button className="btn btn-outline-warning btn-sm border-0 p-0 m-0 " onClick={() => {
+              <button className="btn btn-fav btn-sm border-0 p-0 m-0 " onClick={() => {
               actions.addFavorites(character);
             }}>
                 
