@@ -7,15 +7,13 @@
  
 body{
     min-height: 100vh;
+    
     background: url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png");
     font-family: 'Mouse Memoirs', sans-serif;
     position: relative;
     padding-bottom: 30px;
     
 }
-
-
-
 .navbar{
     background-color: var(--main-bg-color);
     background-image: var(--main-bg-img);
@@ -42,3 +40,24 @@ footer{
     background-color: var(--main-bg-color);
     background-image: var(--main-bg-img);
 }
+.filter{
+    width: 350px;
+    height: 200px;
+    background-color: white;
+    margin-top: 4px;
+    opacity: 55%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.filter ::-webkit-scrollbar{
+    display: none;
+}
+.searchIcon {
+    height: 40px;
+    width: 50px;
+    background-color: var(--main-bg-color);
+    background-image: var(--main-bg-img);
+    display: grid;
+    place-items: center;
+    border-radius: 0 5px 5px 0;
+  }

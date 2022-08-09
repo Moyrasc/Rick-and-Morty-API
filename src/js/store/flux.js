@@ -7,12 +7,13 @@ const getState = ({ getStore, setStore }) => {
       planet: [],
       favorites: [],
       filterItem:[],
+      next_page: ""
     },
     actions: {
       getPersons: () => {
         fetch("https://rickandmortyapi.com/api/character")
           .then((response) => response.json())
-          .then((data) => setStore({ characters: data.results }));
+          .then((data) => setStore({ characters: data.results, next_page: data.next_page }));
       },
       getLocations: () => {
         fetch("https://rickandmortyapi.com/api/location")
@@ -57,6 +58,9 @@ const getState = ({ getStore, setStore }) => {
         setStore({filterItem: search});
 
       },
+      clearInput: () =>{
+        setStore({filterItem: []})
+      }
 	}
 }
   };
