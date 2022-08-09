@@ -38,15 +38,15 @@ El proyecto consiste en desarrollar una página web consumiento la API de Rick y
 - Home: Aquí aparecen tanto los personajes como las localizaciones.
 - Personaje: En ella aparecerá información más completa del personaje que queramos ver.
 - Localización: Al igual que la anterior pero en este caso se muestran las localizaciones.
-- Not found: Por el momento solo se muestra si la ruta no está definida, pero tengo que implementar que también se muestre a la hora de buscar un personaje/localización del que no se disponga información.
+- Not found: Se muestra si la ruta no está definida.
 ### Componentes.
-- Navbar: En la barra de navegación tenemos 2 elementos, por un lado el logo que sirve para volver a la página principal y por otro el botón de favoritos donde se almacenan aquellos elementos que el usuario guarda.
+- Navbar: En la barra de navegación tenemos 2 elementos, por un lado el logo que sirve para volver a la página principal y por otro el botón de favoritos donde se almacenan aquellos elementos que el usuario guarda, en un primer momento solo almacenaba el nombre pero para darle mayor funcionalidad hice que pinchando en el nombre te llevase a la vista del personaje o localización.
 - Cards : Cuando se muestran en la página principal tenemos una imagen, el nombre del personaje/localización y dos botones, uno para guardar en favoritos y el otro para cambiar de vista y obtener más información.
-- Input de búsqueda: Este componente aún no es funcional, estoy trabajando en ello ya que lo que pretendo es que cuando el usuario escriba aparezca un listado de los personajes y localizaciones coincidentes con el texto y que una vez pulse el botón de buscar le redirija a la vista correspondiente.
+- Input de búsqueda: Este componente es el que más me ha costado implementar, a medida que el usuario escribe en el input nos aparece el listado de personajes y se va filtrando a medida que ponemos las letras, pulsando encima del nombre nos lleva a la vista individual del mismo, el problema que me encontré es que una vez que pinchaba para ver al personaje y volvía al home el listado del input se quedaba visible, así que cree un botón que a través de una función limpiase el filtro del input.
 - Footer: Sobre este componente no hay mucho que decir, se puede ver mi nombre, el mes y el año en el que se ha realizado el proyecto.
 ### Flux.
 En un primer momento, las variables de estado,funciones y los fetch estaban cada uno en su componente, una vez empezamos a trabajar con flux, centralicé todas las variables, peticiones y funciones para que el código fuese lo mas limpio posible y el poder pasar la información entre componentes fuese mas sencillo.
 ### Bonus
- Llevo días intentando implementar la paginación para poder controlar el número de elementos que quiero visualizar en cada página para hacer más comoda la navegación del usuario pero me esta dando algún quebradero de cabeza, no obstante es algo que incluiré en el momento que consiga hacerlo funcionar correctamente.
+ Estoy utilizando la libreria MUI CORE ya que llevo días intentando implementar la paginación para poder controlar el número de elementos que quiero visualizar en cada página para hacer más comoda la navegación del usuario pero me esta dando algún quebradero de cabeza, no obstante es algo que incluiré en el momento que consiga hacerlo funcionar correctamente.
 
 
