@@ -2,7 +2,7 @@ import React  from "react";
 import Autocomplete from "./autocomplete.jsx";
 import CardCharacter from "./cardCharacter.jsx";
 import CardLocations from "./cardLocations.jsx";
-import Footer from "./footer.jsx";
+import Pagination from "./pagination.jsx";
 
 
 const CardsHome = () => {
@@ -16,10 +16,12 @@ const CardsHome = () => {
         <h2 className="row-title  mb-4 text-white fs-1 text">Characters</h2>
         <div className="row row-cols-2 row-cols-md-4 row-col-lg">
           <CardCharacter/>
+          <Pagination/>
         </div>
         <h2 className="row-title  mb-4 mt-4 text-white fs-1 text">Locations</h2>
         <div className="row row-cols-2 row-cols-md-4 row-col-lg ">
             <CardLocations/>
+            <Pagination/>
         </div >
         </div>
 

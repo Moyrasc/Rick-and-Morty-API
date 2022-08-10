@@ -7,18 +7,18 @@ const getState = ({ getStore, setStore }) => {
       planet: [],
       favorites: [],
       filterItem:[],
-      next_page: ""
+      info_page: [],
     },
     actions: {
       getPersons: () => {
         fetch("https://rickandmortyapi.com/api/character")
           .then((response) => response.json())
-          .then((data) => setStore({ characters: data.results, next_page: data.next_page }));
+          .then((data) => setStore({ characters: data.results, info_page: data.info }));
       },
       getLocations: () => {
         fetch("https://rickandmortyapi.com/api/location")
           .then((response) => response.json())
-          .then((data) => setStore({ location: data.results }));
+          .then((data) => setStore({ location: data.results, info_page: data.info}));
       },
       getPerson: (id) => {
         fetch(`https://rickandmortyapi.com/api/character/${id}`)
@@ -54,6 +54,27 @@ const getState = ({ getStore, setStore }) => {
       },
       clearInput: () =>{
         setStore({filterItem: []})
+      },
+
+      // funciones para la paginacion
+      onPrevious: (prev) =>{
+        fetch(`https://rickandmortyapi.com/api/character/${prev}`)
+          .then((res) => res.json())
+          .then((data) => setStore({ info_page: data.info }))
+      },
+      onNext: (next) =>{
+        fetch(`https://rickandmortyapi.com/api/character/${next}`)
+          .then((res) => res.json())
+          .then((data) => setStore({ info_page: data.info }))
+
+      },
+      handlePrevious: () =>{
+        onPrevius(info.prev)
+
+      },
+      handleNext: () =>{
+        onNext(info.next)
+
       }
 	}
 }
