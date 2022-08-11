@@ -47,6 +47,6 @@ El proyecto consiste en desarrollar una página web consumiento la API de Rick y
 ### Flux.
 En un primer momento, las variables de estado,funciones y los fetch estaban cada uno en su componente, una vez empezamos a trabajar con flux, centralicé todas las variables, peticiones y funciones para que el código fuese lo mas limpio posible y el poder pasar la información entre componentes fuese mas sencillo.
 ### Bonus
- Estoy utilizando la libreria MUI CORE ya que llevo días intentando implementar la paginación para poder controlar el número de elementos que quiero visualizar en cada página para hacer más comoda la navegación del usuario pero me esta dando algún quebradero de cabeza, no obstante es algo que incluiré en el momento que consiga hacerlo funcionar correctamente.
+ Estoy intentando implementar la paginación para poder controlar el número de elementos que quiero visualizar en cada página para hacer más comoda la navegación del usuario pero me esta dando algún quebradero de cabeza, no obstante es algo que incluiré en el momento que consiga hacerlo funcionar correctamente.
 
 
