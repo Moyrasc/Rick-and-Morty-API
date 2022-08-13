@@ -7,10 +7,10 @@ return (
     <nav>
         <ul className="pagination">
             <li className="page-item">
-                <button className="page-link" onClick={()=>actions.handlePrevious(store.info_page)}>Previous</button>
+                <button className={`btn btn-dark shadow-sm ${!store.info_page ? "invisible" : ""}`}onClick={() => actions.getPersons(store.info_page)}>Previous</button>
             </li>
             <li className="page-item">
-                <button className="page-link" onClick={()=> actions.handleNext(store.info_page)}>Next</button>
+                <button className={`btn btn-dark shadow-sm ${!store.info_page ? "invisible" : ""}`}onClick={() => actions.getPersons(store.info_page)}>Next</button>
             </li>
         </ul>
     </nav>

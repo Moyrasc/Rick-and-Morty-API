@@ -13,12 +13,12 @@ const getState = ({ getStore, setStore }) => {
       getPersons: () => {
         fetch("https://rickandmortyapi.com/api/character")
           .then((response) => response.json())
-          .then((data) => setStore({ characters: data.results, info_page: data.info }));
+          .then((data) => setStore({ characters: data.results, info_page: data.info}));
       },
       getLocations: () => {
         fetch("https://rickandmortyapi.com/api/location")
           .then((response) => response.json())
-          .then((data) => setStore({ location: data.results, info_page: data.info}));
+          .then((data) => setStore({ location: data.results}));
       },
       getPerson: (id) => {
         fetch(`https://rickandmortyapi.com/api/character/${id}`)
@@ -56,26 +56,18 @@ const getState = ({ getStore, setStore }) => {
         setStore({filterItem: []})
       },
 
-      // funciones para la paginacion
-      onPrevious: (prev) =>{
-        fetch(`https://rickandmortyapi.com/api/character/${prev}`)
+      // funciones para la paginacion como es algo que no pide el ejercicio aún no esta terminado 
+      onPrevious: () =>{
+        fetch("https://rickandmortyapi.com/api/character?page=1")
           .then((res) => res.json())
-          .then((data) => setStore({ info_page: data.info }))
+          .then((data) => setStore({info_page: data.next }))
       },
-      onNext: (next) =>{
-        fetch(`https://rickandmortyapi.com/api/character/${next}`)
-          .then((res) => res.json())
-          .then((data) => setStore({ info_page: data.info }))
+      handlePagination: () =>{
+        onPrevius()
+        setStore({info_page:[...store.next]})
 
       },
-      handlePrevious: () =>{
-        onPrevius(info.prev)
-
-      },
-      handleNext: () =>{
-        onNext(info.next)
-
-      }
+     
 	}
 }
   };
