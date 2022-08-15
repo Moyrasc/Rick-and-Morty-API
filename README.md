@@ -49,4 +49,7 @@ En un primer momento, las variables de estado,funciones y los fetch estaban cada
 ### Bonus
  Estoy intentando implementar la paginación para poder controlar el número de elementos que quiero visualizar en cada página para hacer más comoda la navegación del usuario pero me esta dando algún quebradero de cabeza, no obstante es algo que incluiré en el momento que consiga hacerlo funcionar correctamente.
 
+## 💫 Pruébalo tu mismo
+
+https://rick-and-morty-api-moyrasc.vercel.app/
 
