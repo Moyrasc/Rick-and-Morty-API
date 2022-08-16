@@ -33,7 +33,10 @@ $ npm run start
 
 
 ## ✨ Sobre el Proyecto.
-El proyecto consiste en desarrollar una página web consumiento la API de Rick y Morty.Lo he organizado de la siguiente manera:
+El proyecto consiste en desarrollar una página web consumiento la API de Rick y Morty, es totalmente responsive. Lo he organizado de la siguiente manera:
+
+<img src="src/img/preview-responsive.png"/>
+
 ### Vistas (views).
 - Home: Aquí aparecen tanto los personajes como las localizaciones.
 - Personaje: En ella aparecerá información más completa del personaje que queramos ver.
