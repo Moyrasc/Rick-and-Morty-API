@@ -57,10 +57,12 @@ const getState = ({ getStore, setStore }) => {
       },
 
       // funciones para la paginacion como es algo que no pide el ejercicio aún no esta terminado 
-      onPrevious: () =>{
-        fetch("https://rickandmortyapi.com/api/character?page=1")
+      onPrevious: (page) =>{
+        fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
           .then((res) => res.json())
           .then((data) => setStore({info_page: data.next }))
+
+          // const moreCharacters = await getCharacters({ page: 2 } probar algo)
       },
       handlePagination: () =>{
         onPrevius()
