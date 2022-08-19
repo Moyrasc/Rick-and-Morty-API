@@ -7,13 +7,13 @@ const getState = ({ getStore, setStore }) => {
       planet: [],
       favorites: [],
       filterItem:[],
-      info_page: [],
+     
     },
     actions: {
       getPersons: () => {
         fetch("https://rickandmortyapi.com/api/character")
           .then((response) => response.json())
-          .then((data) => setStore({ characters: data.results, info_page: data.info}));
+          .then((data) => setStore({ characters: data.results}));
       },
       getLocations: () => {
         fetch("https://rickandmortyapi.com/api/location")
@@ -56,17 +56,7 @@ const getState = ({ getStore, setStore }) => {
         setStore({filterItem: []})
       },
 
-      // funciones para la paginacion como es algo que no pide el ejercicio aún no esta terminado 
-      onPrevious: () =>{
-        fetch("https://rickandmortyapi.com/api/character?page=1")
-          .then((res) => res.json())
-          .then((data) => setStore({info_page: data.next }))
-      },
-      handlePagination: () =>{
-        onPrevius()
-        setStore({info_page:[...store.next]})
-
-      },
+     
      
 	}
 }
