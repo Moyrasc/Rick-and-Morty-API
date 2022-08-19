@@ -2,7 +2,7 @@ import React  from "react";
 import Autocomplete from "./autocomplete.jsx";
 import CardCharacter from "./cardCharacter.jsx";
 import CardLocations from "./cardLocations.jsx";
-import Pagination from "./pagination.jsx";
+
 
 
 const CardsHome = () => {
